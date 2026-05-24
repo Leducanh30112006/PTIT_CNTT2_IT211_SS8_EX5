@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-@Order(3) // Chạy thứ ba (Chỉ chạy khi thời gian đã hợp lệ, để tránh query DB lãng phí)
+@Order(3) 
 @RequiredArgsConstructor
 public class BalanceValidationAspect {
 
