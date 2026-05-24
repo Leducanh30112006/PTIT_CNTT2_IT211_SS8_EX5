@@ -24,5 +24,5 @@ public class StockOrder {
     private Double price;
     
     @Column(name = "order_type")
-    private String orderType; // BUY, SELL
+    private String orderType;
 }

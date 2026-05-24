@@ -12,7 +12,7 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalTradingExceptionHandler {
 
-    // Bắt toàn bộ các lỗi nghiệp vụ từ các vòng khía cạnh độc lập và Core Engine
+
     @ExceptionHandler({
         MarketClosedException.class, 
         InsufficientFundsException.class, 
@@ -28,7 +28,6 @@ public class GlobalTradingExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 
-    // Xử lý lỗi Format mã chứng khoán từ tầng Validation cửa ngõ
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationErrors(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();

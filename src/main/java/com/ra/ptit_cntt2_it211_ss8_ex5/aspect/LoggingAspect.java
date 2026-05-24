@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-@Order(1) // Chạy đầu tiên
+@Order(1)
 @Slf4j
 public class LoggingAspect {
     @Around("execution(* com.ra.ptit_cntt2_it211_ss8_ex5.service.PlaceOrderService.placeOrder(..))")

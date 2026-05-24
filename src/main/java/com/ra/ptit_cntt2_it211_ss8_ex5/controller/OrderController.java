@@ -20,7 +20,7 @@ public class OrderController {
             @RequestHeader("X-User") String username,
             @Valid @RequestBody OrderRequestDTO dto) {
         
-        // Đánh chặn bẫy lô giao dịch nếu không phải bội số của 100
+
         if (!dto.isValidLotSize()) {
             return ResponseEntity.badRequest().body(java.util.Map.of("error", "Khối lượng đặt lệnh không hợp lệ! Khối lượng phải là bội số của 100 (Ví dụ: 100, 200, 1500)."));
         }

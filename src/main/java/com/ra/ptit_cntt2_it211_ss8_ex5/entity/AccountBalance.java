@@ -12,7 +12,6 @@ import lombok.*;
 public class AccountBalance {
     @Id
     private String username;
-    
     @Column(name = "cash_available")
     private Double cashAvailable;
 }

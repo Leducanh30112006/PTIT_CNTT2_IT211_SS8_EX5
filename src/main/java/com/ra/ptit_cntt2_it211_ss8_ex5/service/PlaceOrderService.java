@@ -15,7 +15,6 @@ public class PlaceOrderService {
 
     @Transactional
     public StockOrder placeOrder(String username, String stockCode, Integer quantity, Double price, String orderType) {
-        // [Logic Lõi]: Kiểm tra biên độ giá lệch quá 7% so với giá tham chiếu 100.0
         double referencePrice = 100.0;
         double deviation = Math.abs(price - referencePrice) / referencePrice;
 
@@ -23,7 +22,7 @@ public class PlaceOrderService {
             throw new MarginViolationException("Đặt lệnh thất bại: Mức giá đặt mua vượt quá biên độ quy định 7% so với giá tham chiếu (100.0)!");
         }
 
-        // Lưu lệnh vào Database
+
         StockOrder order = StockOrder.builder()
                 .username(username)
                 .stockCode(stockCode)

@@ -10,7 +10,7 @@ import java.time.LocalTime;
 
 @Aspect
 @Component
-@Order(2) // Chạy thứ hai
+@Order(2)
 public class TradingTimeAspect {
     @Around("execution(* com.ra.ptit_cntt2_it211_ss8_ex5.service.PlaceOrderService.placeOrder(..))")
     public Object checkTradingTime(ProceedingJoinPoint joinPoint) throws Throwable {
